@@ -20,8 +20,8 @@ export default function Page() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
-            <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
+        <div className="flex items-center justify-center bg-gray-50">
+            <div className="w-full max-w-lg bg-white p-10 rounded-2xl border border-gray-100 shadow-xl">
 
                 <h1 className="text-2xl font-bold mb-6 text-center">
                     ➕ 도서 등록
@@ -44,7 +44,7 @@ export default function Page() {
                 />
 
                 <input
-                    className="w-full border rounded-lg p-3 mb-3"
+                    className="w-full border rounded-lg p-3 mb-3 focus:ring-2 focus:ring-blue-300 outline-none"
                     type="number"
                     placeholder="가격"
                     onChange={(e) =>

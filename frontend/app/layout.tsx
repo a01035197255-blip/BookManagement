@@ -14,23 +14,30 @@ export default function RootLayout({
         <header className="bg-white shadow-sm sticky top-0 z-10">
             <div className="w-full max-w-5xl mx-auto flex justify-between items-center p-4">
 
-                <h1 className="text-xl font-bold text-blue-600">
+                <Link href="/" className="text-xl font-bold text-blue-600 cursor-pointer">
                     📚 Book Manager
-                </h1>
+                </Link>
+                <nav className="flex items-center gap-3">
 
-                <nav className="flex gap-4 text-sm">
-                    <Link className="hover:text-blue-500" href="/">
-                        Home
+                    <Link
+                        href="/"
+                        className="px-4 py-2 rounded-full text-sm font-medium border border-gray-200 bg-white hover:bg-gray-100 transition"
+                    >
+                        🏠 Home
                     </Link>
-                    <Link className="hover:text-blue-500" href="/register">
-                        Register
+
+                    <Link
+                        href="/register"
+                        className="px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition shadow"
+                    >
+                        ➕ Register
                     </Link>
+
                 </nav>
 
             </div>
         </header>
 
-        {/* ⭐ 핵심: 중앙 고정 컨테이너 */}
         <main className="flex justify-center">
             <div className="w-full max-w-5xl p-6">
                 {children}

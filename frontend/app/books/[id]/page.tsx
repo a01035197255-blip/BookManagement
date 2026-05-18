@@ -21,9 +21,9 @@ export default async function Page({
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+        <div className="bg-gray-50 pt-20 px-4 flex justify-center">
 
-            <div className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-8 border">
+            <div className="bg-white w-full max-w-md p-8 rounded-2xl shadow-lg">
 
                 <h1 className="text-2xl font-bold mb-6">
                     📖 도서 상세

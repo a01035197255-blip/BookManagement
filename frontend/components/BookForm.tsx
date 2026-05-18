@@ -14,7 +14,6 @@ export default function BookForm({ id }: { id?: string }) {
         status: "reading",
     });
 
-    /* 📄 수정일 때 기존 데이터 불러오기 */
     useEffect(() => {
         if (id) {
             getBook(id).then((data) => {
@@ -23,7 +22,6 @@ export default function BookForm({ id }: { id?: string }) {
         }
     }, [id]);
 
-    /* 💾 저장 */
     async function handleSubmit() {
         if (id) {
             await updateBook(id, form);
@@ -41,7 +39,7 @@ export default function BookForm({ id }: { id?: string }) {
             </h1>
 
             <input
-                className="w-full border p-2 mb-3 rounded"
+                className="w-full border rounded-lg p-3 mb-3 focus:ring-2 focus:ring-blue-300 outline-none"
                 placeholder="제목"
                 value={form.title}
                 onChange={(e) =>
@@ -50,7 +48,7 @@ export default function BookForm({ id }: { id?: string }) {
             />
 
             <input
-                className="w-full border p-2 mb-3 rounded"
+                className="w-full border rounded-lg p-3 mb-3 focus:ring-2 focus:ring-blue-300 outline-none"
                 placeholder="저자"
                 value={form.author}
                 onChange={(e) =>
@@ -59,7 +57,7 @@ export default function BookForm({ id }: { id?: string }) {
             />
 
             <input
-                className="w-full border p-2 mb-3 rounded"
+                className="w-full border rounded-lg p-3 mb-3 focus:ring-2 focus:ring-blue-300 outline-none"
                 type="number"
                 placeholder="가격"
                 value={form.price}
