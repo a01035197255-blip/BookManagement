@@ -20,7 +20,6 @@ public class Book {
     @Column(nullable = false)
     private String author;
     private Integer price;
-    @Column(nullable = true)
     private boolean available;
 
     public Book(String title, String author, Integer price) {
