@@ -1,13 +1,13 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:bookdb
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://<RDS_ENDPOINT>:3306/bookdb
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -18,21 +18,16 @@ spring:
     init:
       mode: always
 
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
 
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: health
-    endpoint:
-      health:
-        show-details: always
-
-  logging:
-    level:
-      root: INFO
-      com.example.noteapp: DEBUG
+logging:
+  level:
+    root: INFO
+    com.example.bookmanagement: DEBUG
