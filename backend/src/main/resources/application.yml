@@ -22,3 +22,17 @@ spring:
     console:
       enabled: true
       path: /h2-console
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health
+    endpoint:
+      health:
+        show-details: always
+
+  logging:
+    level:
+      root: INFO
+      com.example.noteapp: DEBUG

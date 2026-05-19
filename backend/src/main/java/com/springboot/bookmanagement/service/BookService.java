@@ -3,6 +3,7 @@ package com.springboot.bookmanagement.service;
 import com.springboot.bookmanagement.dto.BookRequest;
 import com.springboot.bookmanagement.dto.BookResponse;
 import com.springboot.bookmanagement.entity.Book;
+import com.springboot.bookmanagement.exception.BookNotFoundException;
 import com.springboot.bookmanagement.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public class BookService {
 
     public BookResponse findById(Long id) {
         Book book = bookRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Book not found"));
+                .orElseThrow(() -> new BookNotFoundException(id));
 
         return BookResponse.from(book);
     }
@@ -46,7 +47,7 @@ public class BookService {
 
     public BookResponse update(Long id, BookRequest dto) {
         Book book = bookRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Book not found"));
+                .orElseThrow(() -> new BookNotFoundException(id));
 
         book.setTitle(dto.getTitle());
         book.setAuthor(dto.getAuthor());
