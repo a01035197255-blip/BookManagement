@@ -7,13 +7,14 @@ phases:
 
   build:
     commands:
+      - cd backend
       - chmod +x gradlew
       - ./gradlew clean bootJar -x test
 
   post_build:
     commands:
       - mkdir -p deploy-backend
-      - cp build/libs/*.jar deploy-backend/app.jar
+      - cp backend/build/libs/*.jar deploy-backend/app.jar
 
 artifacts:
   files:
