@@ -13,8 +13,8 @@ phases:
 
   post_build:
     commands:
-      - mkdir -p deploy-backend
-      - cp backend/build/libs/*.jar deploy-backend/app.jar
+      - mkdir -p ../deploy-backend
+      - cp build/libs/*.jar ../deploy-backend/app.jar
 
 artifacts:
   files:
