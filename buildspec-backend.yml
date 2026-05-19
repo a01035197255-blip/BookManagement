@@ -5,16 +5,15 @@ phases:
     runtime-versions:
       java: corretto17
 
-  phases:
-    build:
-      commands:
-        - chmod +x gradlew
-        - ./gradlew clean bootJar -x test
+  build:
+    commands:
+      - chmod +x gradlew
+      - ./gradlew clean bootJar -x test
 
-    post_build:
-      commands:
-        - mkdir -p deploy-backend
-        - cp build/libs/*.jar deploy-backend/app.jar
+  post_build:
+    commands:
+      - mkdir -p deploy-backend
+      - cp build/libs/*.jar deploy-backend/app.jar
 
 artifacts:
   files:
