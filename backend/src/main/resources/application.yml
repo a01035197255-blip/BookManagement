@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://<RDS_ENDPOINT>:3306/bookdb
+    url: jdbc:mysql://awseb-e-rmdmrqbbfm-stack-awsebrdsdatabase-yxyeagywxosh.cbkkm66u0z6l.ap-northeast-2.rds.amazonaws.com:3306/bookdb
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
