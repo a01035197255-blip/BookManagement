@@ -6,7 +6,7 @@ spring:
     url: jdbc:mariadb://awseb-e-ppzmaadqdf-stack-awsebrdsdatabase-37eyl5iugvt0.cbkkm66u0z6l.ap-northeast-2.rds.amazonaws.com:3306/bookdb
     username: admin
     password: sta!0035
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.mariadb.jdbc.Driver
 
   jpa:
     hibernate:
@@ -15,6 +15,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    database-platform: org.hibernate.dialect.MariaDBDialect
 
 management:
   endpoints:
